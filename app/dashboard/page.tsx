@@ -1,3 +1,17 @@
+'use client'
+import { useRouter } from "next/navigation";
+
 export default function Page() {
-  return <h1>Hello, Dashboard Page!</h1>
+  const router = useRouter();
+ 
+  return (
+    <>
+      <button type="button" onClick={() => router.push('/dashboard')}>
+        Dashboard
+      </button>
+      <button type="button" onClick={() => router.push('/team/1')}>
+        Team
+      </button>
+    </>
+  )
 }
