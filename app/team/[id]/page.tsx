@@ -1,17 +1,13 @@
-import { redirect } from 'next/navigation'
+'use client'
+import { redirect, useRouter } from 'next/navigation'
  
-async function fetchTeam(id: string) {
-  try {
-    const res = await fetch('https://localhost:5000/api');
-    return res.json();
-  } catch {
-    return undefined;
-  }
-}
- 
-export default async function Profile({ params }: { params: { id: string } }) {
-  const team = await fetchTeam(params.id)
-  if (!team) {
-    redirect('/login');
-  }
+export default function Profile({ params }: { params: { id: string } }) {
+  const router = useRouter();
+  return (
+    <>
+          <button type="button" key={params.id} onClick={() => router.back()}>
+            Team{params.id}
+          </button>
+    </>
+  )
 }
