@@ -12,6 +12,12 @@ export default function Page() {
       <button type="button" onClick={() => router.push('/dashboard')}>
         Dashboard
       </button>
+      <button type="button" onClick={() => router.push('/team')}>
+        Team
+      </button>
+      <button type="button" onClick={() => router.push('/login')}>
+        Login
+      </button>
     </>
   )
 }
