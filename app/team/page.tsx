@@ -1,21 +1,30 @@
 'use client'
 import { useRouter } from "next/navigation";
+import { Suspense } from 'react'
 
 export default function Page() {
   const router = useRouter();
-  const count = [1, 2, 3, 4];
-  console.log(count);
+  let while_count = 20;
+  const count = [];
+  while (while_count--) {
+    count.push(while_count);
+  }
 
   return (
     <>
       {count.map(item => {
         return (
-          <button type="button" key={item} onClick={() => router.push(`/team/${item}`)}>
-            Team{item}
-          </button>
+          <>
+              <button type="button" key={item} onClick={() => router.push(`/team/${item}`)}>
+                Team{item}
+              </button>
+            <br />
+          </>
         )
-      }
-      )}
+      })}
+      <button type="button" onClick={() => router.push(`/`)}>
+        Home
+      </button>
     </>
   )
 }

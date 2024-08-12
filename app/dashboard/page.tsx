@@ -6,7 +6,7 @@ export default function Page() {
  
   return (
     <>
-      <button type="button" onClick={() => router.push('/dashboard')}>
+      <button type="button" onClick={() => router.push('/')}>
         Dashboard
       </button>
       <button type="button" onClick={() => router.push('/team')}>
